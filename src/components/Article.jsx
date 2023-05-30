@@ -18,7 +18,7 @@ function Article() {
     return (
         <>
         <main><h2>{article.title}</h2>
-        <img src={article.article_img_url}></img>
+        <img src={article.article_img_url} alt={`represents ${article.topic}`}></img>
         <p class='article-author'>Posted by {article.author}</p>
         <p class='article-body'>{article.body}</p></main>
 
