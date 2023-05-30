@@ -18,11 +18,11 @@ function Articles() {
             <h2>ARTICLES</h2>
             <ol>
                 {articles.map((article) => {
-                    return <Link to={`/articles/${article.article_id}`}><li key={article.article_id}>
+                    return <li key={article.article_id}>
                         <h3>{article.title}</h3>
-                        <img className="article_image" alt={`representing ${article.topic}`} src={article.article_img_url}></img>
+                        <Link to={`/articles/${article.article_id}`}><img className="article_image" alt={`representing ${article.topic}`} src={article.article_img_url}></img></Link>
                         <p>{`Posted by ${article.author}`}</p>
-                    </li></Link>
+                    </li>
                 })}
             </ol>
 

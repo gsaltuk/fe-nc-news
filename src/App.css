@@ -18,6 +18,40 @@ ol {
 
 }
 
+a {
+    color:white;
+}
+
+.nav-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    list-style: none;
+    background-color: black;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 0;
+    margin:0;
+}
+
+.nav-list-item {
+    width: 25%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin:auto;
+
+}
+
+.nav-list-logo {
+ width: 10%;
+}
+
+.nav-list-search {
+    margin:auto;
+    width: 50%;
+
+}
+
 .article_image {
     width: 30em;
     height: 30em;
@@ -48,7 +82,6 @@ ol {
 }
 
 .comment-author {
-    font-size:1.5em;
+    font-size: 1.5em;
     text-transform: uppercase;
 }
-
