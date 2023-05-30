@@ -7,7 +7,6 @@ function Article() {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
-function Article() {
 
 
     const {article_id} = useParams()
@@ -45,10 +44,8 @@ function Article() {
                     </>
                 )
             })}
-
-        })
-        
-
-}
+            </section>
+            </>
+    )}
 
 export default Article
