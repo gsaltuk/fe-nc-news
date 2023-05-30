@@ -23,7 +23,7 @@ function Article() {
 
     return (
         <>
-        <main><h2>{article.title}</h2>
+        <main><h2 className='article-title'>{article.title}</h2>
         <img src={article.article_img_url} alt={`represents ${article.topic}`}></img>
         <p className='article-author'>Posted by {article.author}</p>
         <p className='article-body'>{article.body}</p></main>
@@ -34,7 +34,6 @@ function Article() {
                     <>
                     <p className="comment-body">{comment.body}</p>
                     <p className="comment-author">{comment.author}</p>
-
                     </>
                 )
             })}
