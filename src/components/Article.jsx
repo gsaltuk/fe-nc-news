@@ -5,22 +5,30 @@ import { fetchArticle, fetchComments } from "../utils/api-utils"
 function Article() {
     const [article, setArticle] = useState({})
     const [comments, setComments] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+
+function Article() {
+
+
     const {article_id} = useParams()
 
     useEffect(() => {
         fetchArticle(article_id).then(({article}) => {
             setArticle(article)
+            setIsLoading(false)
         })
         
     }, [])
 
     useEffect(() => {
         fetchComments(article_id).then(({comments}) => {
-            console.log(comments)
             setComments(comments)
         })
     },[])
 
+      if(isLoading){
+        return <p>Article Loading...</p>
+    }
     return (
         <>
         <main><h2 className='article-title'>{article.title}</h2>
@@ -37,9 +45,9 @@ function Article() {
                     </>
                 )
             })}
-        </section>
-        </>
-    )
+
+        })
+        
 
 }
 
