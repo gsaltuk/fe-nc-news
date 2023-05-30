@@ -14,6 +14,7 @@ function fetchArticle(id) {
     return articlesApi.get(`/articles/${id}`).then((res) => {
         return res.data
     })
-}
+};
+
 
 export { fetchArticles, fetchArticle };
