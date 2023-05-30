@@ -27,6 +27,7 @@ ol {
 .article-author {
     text-transform: uppercase;
     font-size: 1.5em;
+    font-weight: bolder;
 }
 
 .article-title {
@@ -36,6 +37,9 @@ ol {
 
 .article-body {
     font-size: 2em;
+}
+.article-votes {
+    font-size: 3em;
 }
 
 .comment-title {
@@ -50,5 +54,10 @@ ol {
 .comment-author {
     font-size:1.5em;
     text-transform: uppercase;
+    font-weight: bolder;
 }
 
+.vote-icon {
+    height: 1em;
+    width: 1em;
+}
