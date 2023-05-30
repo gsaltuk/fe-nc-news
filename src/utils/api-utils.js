@@ -17,4 +17,10 @@ function fetchArticle(id) {
 };
 
 
-export { fetchArticles, fetchArticle };
+
+function fetchComments(id) {
+    return articlesApi.get(`/articles/${id}/comments`).then((res) => {
+        return res.data
+    })
+}
+export { fetchArticles, fetchArticle, fetchComments };

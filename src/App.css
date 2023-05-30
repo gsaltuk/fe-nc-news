@@ -9,19 +9,6 @@ h2 {
     text-transform: uppercase;
     font-size: 3rem;
 }
-.article-author {
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.article-body {
-    font-size: 2.5rem;
-}
-.article_image {
-    width:30em;
-    height: 30em;
-    object-fit: cover;
-}
 
 ol {
     list-style: none;
@@ -29,5 +16,39 @@ ol {
     grid-template-columns: auto auto auto;
     gap: 10px;
 
+}
+
+.article_image {
+    width: 30em;
+    height: 30em;
+    object-fit: cover;
+}
+
+.article-author {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.article-title {
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.article-body {
+    font-size: 2em;
+}
+
+.comment-title {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.comment-body {
+    font-size: 1.8em;
+}
+
+.comment-author {
+    font-size:1.5em;
+    text-transform: uppercase;
 }
 

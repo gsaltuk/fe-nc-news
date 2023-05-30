@@ -20,7 +20,7 @@ function Articles() {
                 {articles.map((article) => {
                     return <Link to={`/articles/${article.article_id}`}><li key={article.article_id}>
                         <h3>{article.title}</h3>
-                        <img class="article_image" alt={`representing ${article.topic}`} src={article.article_img_url}></img>
+                        <img className="article_image" alt={`representing ${article.topic}`} src={article.article_img_url}></img>
                         <p>{`Posted by ${article.author}`}</p>
                     </li></Link>
                 })}
