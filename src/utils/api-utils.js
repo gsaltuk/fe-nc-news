@@ -9,5 +9,10 @@ function fetchArticles() {
     return res.data;
   });
 }
+function fetchArticle(article_id) {
+  return articlesApi.get(`/articles/${article_id}`).then((res) => {
+    return res.data;
+  });
+}
 
-export { fetchArticles };
+export { fetchArticles, fetchArticle };

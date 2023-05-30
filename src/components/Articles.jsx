@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-import { fetchArticles } from "../utils/api-utils"
+import { fetchArticles, fetchArticle } from "../utils/api-utils"
 import { Link } from "react-router-dom"
+
 
 
 
@@ -18,7 +19,7 @@ function Articles() {
             <ol>
                 {articles.map((article) => {
                     return <Link to={`/articles/${article.article_id}`}><li key={article.article_id}>
-                        <h3>Article Title Goes Here</h3>
+                        <h3>{article.title}</h3>
                         <img class="article_image" src={article.article_img_url}></img>
                         <p>{`Posted by ${article.author}`}</p>
                     </li></Link>
