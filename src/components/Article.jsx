@@ -21,6 +21,7 @@ function Article() {
         <img src={article.article_img_url}></img>
         <p class='article-author'>Posted by {article.author}</p>
         <p class='article-body'>{article.body}</p></main>
+
         </>
     )
 
