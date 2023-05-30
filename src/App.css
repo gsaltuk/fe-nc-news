@@ -1,3 +1,18 @@
-* {
+body {
+    margin: auto;
     text-align: center;
+}
+
+ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+
+}
+
+.article_image {
+    width:30em;
+    height: 30em;
+    object-fit: cover;
 }
