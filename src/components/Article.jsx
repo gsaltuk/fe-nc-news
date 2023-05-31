@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticle, fetchComments, increaseVote, decreaseVote } from "../utils/api-utils"
+import { fetchArticle, fetchComments, increaseVote, decreaseVote } from "../utils/utils"
 
 function Article() {
     const [article, setArticle] = useState({})

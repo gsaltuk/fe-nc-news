@@ -1,30 +1,30 @@
 import axios from "axios";
 
-const articlesApi = axios.create({
+const api = axios.create({
   baseURL: "https://nc-news-gs.onrender.com/api",
 });
 
 function fetchArticles() {
-  return articlesApi.get("/articles").then((res) => {
+  return api.get("/articles").then((res) => {
     return res.data;
   });
 }
 
 function fetchArticle(id) {
-  return articlesApi.get(`/articles/${id}`).then((res) => {
+  return api.get(`/articles/${id}`).then((res) => {
     return res.data;
   });
 }
 
 function fetchComments(id) {
-  return articlesApi.get(`/articles/${id}/comments`).then((res) => {
+  return api.get(`/articles/${id}/comments`).then((res) => {
     return res.data;
   });
 }
 
 function increaseVote(id) {
   const patchBody = { inc_votes: 1 };
-  return articlesApi
+  return api
     .patch(`/articles/${id}`, patchBody)
     .then((res) => {
       return res.data;
@@ -36,7 +36,7 @@ function increaseVote(id) {
 
 function decreaseVote(id) {
   const patchBody = { inc_votes: -1 };
-  return articlesApi
+  return api
     .patch(`/articles/${id}`, patchBody)
     .then((res) => {
       return res.data;
@@ -46,10 +46,18 @@ function decreaseVote(id) {
     });
 }
 
+function fetchUsers() {
+  return api.get("/users").then((res) => {
+    return res.data;
+  });
+
+}
+
 export {
   fetchArticles,
   fetchArticle,
   fetchComments,
   increaseVote,
   decreaseVote,
+  fetchUsers
 };

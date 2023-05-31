@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function Nav() {
+function Nav({username, name, avatar_url}) {
     return (
         <>
             <nav>
@@ -14,6 +14,7 @@ function Nav() {
                         <button>🔎</button>
                     </form></li>
                     <li className="nav-list-item"><Link to="/users" style={{ textDecoration: 'none' }}>Users</Link></li>
+                <li className="nav-list-item">Logged in: {name}</li>
                 </ul>
             </nav>
         </>

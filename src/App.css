@@ -28,7 +28,7 @@ a {
 }
 
 main {
-    margin-top: 250px;
+    margin-top: 300px;
 
 }
 
@@ -126,3 +126,6 @@ main {
     transition: 0.5s;
 }
 
+.users-avatar {
+    height:50%
+}

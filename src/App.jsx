@@ -5,19 +5,25 @@ import Articles from './components/Articles'
 import Article from './components/Article'
 import Users from './components/Users'
 import '../src/App.css'
+import { useState } from 'react'
 
 
 function App() {
+  const [user, setUser] = useState({
+    "username": "default_guest",
+    "name": "Guest User",
+    "avatar-url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+  })
 
   return (
     <BrowserRouter>
       <>
-        <Nav />
+        <Nav username={user.username} name={user.name} avatar_url={user.avatar_url} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/articles" element={<Articles  />}></Route>
+          <Route path="/articles" element={<Articles />}></Route>
           <Route path="/articles/:article_id" element={<Article />}></Route>
-          <Route path="/users" element={<Users />}></Route>
+          <Route path="/users" element={<Users user={user} setUser={setUser} />}></Route>
         </Routes>
       </>
     </BrowserRouter>
