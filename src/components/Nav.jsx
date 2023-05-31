@@ -13,6 +13,7 @@ function Nav() {
                 <input placeholder="Search!"></input>
                 <button>🔎</button>
             </form></li>
+            <li className="user-icon"><Link to="/users"><img></img></Link></li>
             </ul>
         </nav>
         </>
