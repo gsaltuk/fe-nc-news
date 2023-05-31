@@ -10,9 +10,9 @@ import { useState } from 'react'
 
 function App() {
   const [user, setUser] = useState({
-    "username": "default_guest",
-    "name": "Guest User",
-    "avatar-url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+    "username": "tickle122",
+    "name": "Tom Tickle",
+    "avatar-url": "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953"
   })
 
   return (
@@ -21,8 +21,8 @@ function App() {
         <Nav username={user.username} name={user.name} avatar_url={user.avatar_url} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/articles" element={<Articles />}></Route>
-          <Route path="/articles/:article_id" element={<Article />}></Route>
+          <Route path="/articles" element={<Articles  />}></Route>
+          <Route path="/articles/:article_id" element={<Article user={user} />}></Route>
           <Route path="/users" element={<Users user={user} setUser={setUser} />}></Route>
         </Routes>
       </>
