@@ -18,6 +18,11 @@ ol {
 
 }
 
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
 .article_image {
     width: 30em;
     height: 30em;
@@ -39,7 +44,7 @@ ol {
     font-size: 2em;
 }
 .article-votes {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .comment-title {
@@ -60,4 +65,19 @@ ol {
 .vote-icon {
     height: 1em;
     width: 1em;
+}
+
+.vote-button {
+    width: 5%;
+    height: 50px;
+    font-size: 30px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+}
+
+.vote-button:hover {
+    background-color: rgb(253, 3, 153);
+    transition: 0.5s;
+
 }
