@@ -19,6 +19,7 @@ function Articles() {
     }
     return (
         <>
+        <main>
             <h2>ARTICLES</h2>
             <ol>
                 {articles.map((article) => {
@@ -29,7 +30,7 @@ function Articles() {
                     </li>
                 })}
             </ol>
-
+            </main>
         </>
     )
 }

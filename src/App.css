@@ -24,13 +24,16 @@ a {
 
 .nav-list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     list-style: none;
     background-color: black;
     text-transform: uppercase;
     color: white;
     padding-top: 0;
     margin:0;
+    position:fixed;
+    top:0;
+    width:100%;
 }
 
 .nav-list-item {
@@ -84,4 +87,8 @@ a {
 .comment-author {
     font-size: 1.5em;
     text-transform: uppercase;
+}
+
+main {
+    margin-top: 250px;
 }
