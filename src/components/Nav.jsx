@@ -14,7 +14,7 @@ function Nav({username, name, avatar_url}) {
                         <button>🔎</button>
                     </form></li>
                     <li className="nav-list-item"><Link to="/users" style={{ textDecoration: 'none' }}>Users</Link></li>
-                <li className="nav-list-item">Logged in: {name}</li>
+                <li className="nav-list-item">Logged in as {name}</li>
                 </ul>
             </nav>
         </>
