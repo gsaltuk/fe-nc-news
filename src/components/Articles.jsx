@@ -7,12 +7,16 @@ import { Link } from "react-router-dom"
 
 function Articles() {
     const [articles, setArticles] = useState([])
-
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         fetchArticles().then(({ articles }) => {
             setArticles(articles)
+            setIsLoading(false)
         })
     })
+    if(isLoading){
+        return <p>Articles Loading...</p>
+    }
     return (
         <>
             <h2>ARTICLES</h2>
