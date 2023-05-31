@@ -53,11 +53,18 @@ function fetchUsers() {
 
 }
 
+function fetchTopics() {
+  return api.get("/topics").then((res) => {
+    return res.data
+  })
+}
+
 export {
   fetchArticles,
   fetchArticle,
   fetchComments,
   increaseVote,
   decreaseVote,
-  fetchUsers
+  fetchUsers,
+  fetchTopics
 };
