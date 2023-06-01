@@ -56,10 +56,19 @@ function fetchUsers() {
   });
 }
 
+
 function fetchTopics() {
   return api.get("/topics").then((res) => {
     return res.data;
   });
+
+function postComment(id, comment) {
+  return api.post(`/articles/${id}/comments`, comment).then((res)=> {
+    return res.data
+  }).catch((err) => {
+    return err;
+  })
+
 }
 
 export {
@@ -69,5 +78,9 @@ export {
   increaseVote,
   decreaseVote,
   fetchUsers,
+
   fetchTopics,
+
+  postComment
+
 };
