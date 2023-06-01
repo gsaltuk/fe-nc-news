@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { fetchArticles, fetchArticle } from "../utils/utils"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 
 
 
@@ -8,28 +8,35 @@ import { Link } from "react-router-dom"
 function Articles() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [sort, setSort] = useState('created_at')
-    const [order, setOrder] = useState('descending')
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [newParams, setNewParams] = useState({
+        sort: 'created_at',
+        order: 'desc'
+    })
+    function handleSortChange(event) {
+        event.preventDefault()
+        setNewParams({ ...newParams, sort: event.target.value })
+    }
+    function handleOrderChange(event) {
+        event.preventDefault()
+        setNewParams({ ...newParams, order: event.target.value })
+    }
+    useEffect(() => {
+        setSearchParams(newParams);
+    }, [newParams]);
+
+    // const sort = searchParams.get('sort')
+    // const order = searchParams.get('order')
 
     useEffect(() => {
-        fetchArticles(sort, order).then((articles) => {
+        fetchArticles(newParams.sort, newParams.order).then(({ articles }) => {
             setArticles(articles)
             setIsLoading(false)
         })
-    }, [sort, order])
+    }, [newParams.sort, newParams.order])
 
-
-    function handleSortChange(event) {
-        event.preventDefault()
-        setSort(event.target.value)
-    }
-
-    function handleOrderChange(event) {
-        event.preventDefault()
-        setOrder(event.target.value)
-    }
     if (isLoading) {
-        return <p>Articles Loading...</p>
+        return <p className="loading-message">Articles Loading...</p>
     }
     return (
         <>

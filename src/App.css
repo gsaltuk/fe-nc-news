@@ -34,6 +34,11 @@ main {
 
 }
 
+.loading-message {
+    margin-top: 300px;
+    color: black;
+}
+
 .nav-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
