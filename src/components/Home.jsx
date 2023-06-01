@@ -4,7 +4,7 @@ function Home () {
         <>
         <main>
         <h1>WELCOME TO</h1>
-        <h2>HOT 🔥 GOSS</h2>
+        <img className="nav-logo" src="src/assets/chit-chat-logo-black.svg"/>
         </main>
         </>
     )
