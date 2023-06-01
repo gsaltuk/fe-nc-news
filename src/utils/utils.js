@@ -56,7 +56,6 @@ function fetchUsers() {
   });
 }
 
-
 function fetchTopics() {
   return api.get("/topics").then((res) => {
     return res.data;
@@ -64,12 +63,25 @@ function fetchTopics() {
 }
 
 function postComment(id, comment) {
-  return api.post(`/articles/${id}/comments`, comment).then((res)=> {
-    return res.data
-  }).catch((err) => {
-    return err;
-  })
+  return api
+    .post(`/articles/${id}/comments`, comment)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+}
 
+function deleteComment(id) {
+  return api
+    .delete(`/comments/${id}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
 }
 
 export {
@@ -79,9 +91,7 @@ export {
   increaseVote,
   decreaseVote,
   fetchUsers,
-
   fetchTopics,
-
-  postComment
-
+  postComment,
+  deleteComment
 };

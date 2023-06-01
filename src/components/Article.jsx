@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticle, fetchComments, increaseVote, decreaseVote, postComment } from "../utils/utils"
+import { fetchArticle, fetchComments, increaseVote, decreaseVote, postComment, deleteComment } from "../utils/utils"
 
 function Article({ user }) {
     const [article, setArticle] = useState({})
@@ -13,7 +13,7 @@ function Article({ user }) {
     const { article_id } = useParams()
     const [commentPostMessage, setCommentPostMessage] = useState('')
     const [disableForm, setDisableForm] = useState(false)
-console.log(user)
+    const [deleteCommentID, setDeleteCommentID] = useState('')
     useEffect(() => {
         fetchArticle(article_id).then(({ article }) => {
             setArticle(article)
@@ -26,7 +26,7 @@ console.log(user)
         fetchComments(article_id).then(({ comments }) => {
             setComments(comments)
         })
-    }, [])
+    }, [comments])
 
 
 
@@ -95,6 +95,15 @@ console.log(user)
     }
 
 
+    function handleDelete(id) {
+        deleteComment(id).then(() => {
+            alert('Comment Deleted!')
+        }).catch((err) => {
+            if(err){
+                alert('Error deleting comment! Please try again')
+            }
+        })
+    }
 
     if (isLoading) {
         return <p>Article Loading...</p>
@@ -136,6 +145,7 @@ console.log(user)
                                     <p className="comment-body">{comment.body}</p>
                                     <p className="comment-author">{comment.author}</p>
                                     <p className="comment-date">{newDate.toLocaleString()}</p>
+                                    <button onClick={() => { handleDelete(comment.comment_id) }} value={comment.comment_id}>X</button>
                                 </li>
                             </>
                         )
