@@ -30,8 +30,12 @@ a {
 }
 
 main {
-    margin-top: 300px;
+    margin-top: 350px;
 
+}
+textarea {
+    text-align: center;
+    font-size: 30px;
 }
 
 .loading-message {

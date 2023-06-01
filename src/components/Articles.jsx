@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { fetchArticles, fetchArticle } from "../utils/utils"
-import { Link, useSearchParams } from "react-router-dom"
-
+import { Link, useSearchParams, useParams } from "react-router-dom"
 
 
 
@@ -13,6 +12,8 @@ function Articles() {
         sort: 'created_at',
         order: 'desc'
     })
+    const {topic} = useParams()
+
     function handleSortChange(event) {
         event.preventDefault()
         setNewParams({ ...newParams, sort: event.target.value })
@@ -29,7 +30,7 @@ function Articles() {
     // const order = searchParams.get('order')
 
     useEffect(() => {
-        fetchArticles(newParams.sort, newParams.order).then(({ articles }) => {
+        fetchArticles(topic, newParams.sort, newParams.order).then(({ articles }) => {
             setArticles(articles)
             setIsLoading(false)
         })
@@ -67,6 +68,7 @@ function Articles() {
                         </li>
                     })}
                 </ol>
+
             </main>
         </>
     )
