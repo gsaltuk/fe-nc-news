@@ -13,7 +13,6 @@ function Article({ user }) {
     const { article_id } = useParams()
     const [commentPostMessage, setCommentPostMessage] = useState('')
     const [disableForm, setDisableForm] = useState(false)
-    const [deleteCommentID, setDeleteCommentID] = useState('')
     useEffect(() => {
         fetchArticle(article_id).then(({ article }) => {
             setArticle(article)
