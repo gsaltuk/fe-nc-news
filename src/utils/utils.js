@@ -50,7 +50,14 @@ function fetchUsers() {
   return api.get("/users").then((res) => {
     return res.data;
   });
+}
 
+function postComment(id, comment) {
+  return api.post(`/articles/${id}/comments`, comment).then((res)=> {
+    return res.data
+  }).catch((err) => {
+    return err;
+  })
 }
 
 export {
@@ -59,5 +66,6 @@ export {
   fetchComments,
   increaseVote,
   decreaseVote,
-  fetchUsers
+  fetchUsers,
+  postComment
 };
