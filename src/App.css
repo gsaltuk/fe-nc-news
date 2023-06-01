@@ -1,3 +1,5 @@
+
+
 body {
     margin: auto;
     text-align: center;
@@ -34,6 +36,11 @@ main {
 textarea {
     text-align: center;
     font-size: 30px;
+}
+
+.loading-message {
+    margin-top: 300px;
+    color: black;
 }
 
 .nav-list {
