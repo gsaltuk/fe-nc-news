@@ -24,10 +24,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/articles" element={<Articles />}></Route>
+          <Route path="/articles/topics/:topic" element={<Articles />}></Route>
           <Route path="/articles/:article_id" element={<Article />}></Route>
           <Route path="/users" element={<Users user={user} setUser={setUser} />}></Route>
           <Route path="/topics" element={<Topics />}></Route>
-          <Route path="/topics/:topic" element={<ArticleByTopic/>}></Route>
+
         </Routes>
       </>
     </BrowserRouter>
