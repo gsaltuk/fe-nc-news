@@ -55,6 +55,8 @@ function fetchUsers() {
 function postComment(id, comment) {
   return api.post(`/articles/${id}/comments`, comment).then((res)=> {
     return res.data
+  }).catch((err) => {
+    return err;
   })
 }
 
