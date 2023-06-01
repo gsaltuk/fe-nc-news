@@ -43,8 +43,8 @@ function Articles() {
                             <option value='votes'>Votes</option>
                         </select>
                         <select onChange={handleOrderChange} id="order">
-                            <option value='descending'>Descending</option>
-                            <option value='ascending'>Ascending</option>
+                            <option value='desc'>Descending</option>
+                            <option value='asc'>Ascending</option>
                         </select>
                     </form>
                 </section>

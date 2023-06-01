@@ -55,7 +55,8 @@ function Article() {
     }
     return (
         <>
-            <main><h2 className='article-title'>{article.title}</h2>
+            <main>
+                <h2 className='article-title'>{article.title}</h2>
                 <img src={article.article_img_url} alt={`represents ${article.topic}`}></img>
                 <p className='article-author'>Posted by {article.author}</p>
                 <p className="article-votes">{article.votes} people love this goss!</p>

@@ -6,7 +6,6 @@ const api = axios.create({
 
 function fetchArticles(sort, order) {
   return api.get("/articles").then((res) => {
-    console.log(res.data.articles)
     const dataToSort = res.data.articles;
     return sortByProperty(dataToSort, sort, order) 
   });
@@ -55,21 +54,21 @@ function fetchUsers() {
 
 }
 
-//Sort function 
+// Sort function 
 
-function sortByProperty(array, property, order) {
-  return array.sort((a, b) => {
-    const aValue = Number(a[property]);
-    const bValue = Number(b[property]);
+// function sortByProperty(array, property, order) {
+//   return array.sort((a, b) => {
+//     const aValue = Number(a[property]);
+//     const bValue = Number(b[property]);
 
-    if (order === "ascending") {
-      return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
-    } else if (order === "descending") {
-      return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
-    }
-    return 0;
-  });
-}
+//     if (order === "ascending") {
+//       return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
+//     } else if (order === "descending") {
+//       return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
+//     }
+//     return 0;
+//   });
+// }
 
 export {
   fetchArticles,
