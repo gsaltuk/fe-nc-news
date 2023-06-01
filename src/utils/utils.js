@@ -4,10 +4,14 @@ const api = axios.create({
   baseURL: "https://nc-news-gs.onrender.com/api",
 });
 
-function fetchArticles() {
-  return api.get("/articles").then((res) => {
-    return res.data;
-  });
+function fetchArticles(topic) {
+  return api
+    .get("/articles", {
+      params: { topic: topic },
+    })
+    .then((res) => {
+      return res.data;
+    });
 }
 
 function fetchArticle(id) {
@@ -52,12 +56,19 @@ function fetchUsers() {
   });
 }
 
+
+function fetchTopics() {
+  return api.get("/topics").then((res) => {
+    return res.data;
+  });
+
 function postComment(id, comment) {
   return api.post(`/articles/${id}/comments`, comment).then((res)=> {
     return res.data
   }).catch((err) => {
     return err;
   })
+
 }
 
 export {
@@ -67,5 +78,9 @@ export {
   increaseVote,
   decreaseVote,
   fetchUsers,
+
+  fetchTopics,
+
   postComment
+
 };

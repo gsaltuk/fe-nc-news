@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react"
 import { fetchArticles, fetchArticle } from "../utils/utils"
 import { Link } from "react-router-dom"
-
+import { useParams } from "react-router-dom"
 
 
 
 function Articles() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const {topic} = useParams()
     useEffect(() => {
-        fetchArticles().then(({ articles }) => {
+        fetchArticles(topic).then(({ articles }) => {
             setArticles(articles)
             setIsLoading(false)
         })
@@ -20,7 +21,6 @@ function Articles() {
     return (
         <>
         <main>
-            <h2>ARTICLES</h2>
             <ol>
                 {articles.map((article) => {
                     return <li key={article.article_id}>
