@@ -144,7 +144,7 @@ function Article({ user }) {
                                     <p className="comment-body">{comment.body}</p>
                                     <p className="comment-author">{comment.author}</p>
                                     <p className="comment-date">{newDate.toLocaleString()}</p>
-                                    <button onClick={() => { handleDelete(comment.comment_id) }} value={comment.comment_id}>X</button>
+                                    <button id="delete-button"onClick={() => { handleDelete(comment.comment_id) }} value={comment.comment_id}>X</button>
                                 </li>
                             </>
                         )
