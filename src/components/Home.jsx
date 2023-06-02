@@ -3,8 +3,8 @@ function Home () {
 
         <>
         <main>
-        <h1>WELCOME TO</h1>
-        <img className="nav-logo" src="src/assets/chit-chat-logo-black.svg"/>
+        <h1 className="home-title">WELCOME TO</h1>
+        <img className="home-logo" src="src/assets/chit-chat-logo-black.svg"/>
         </main>
         </>
     )

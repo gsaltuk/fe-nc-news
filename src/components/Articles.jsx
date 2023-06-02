@@ -37,12 +37,12 @@ function Articles() {
     }, [newParams.sort, newParams.order])
 
     if (isLoading) {
-        return <p className="loading-message">Articles Loading...</p>
+        return <p>Loading Articles...</p>
     }
     return (
         <>
             <main>
-                <h2>ARTICLES</h2>
+                <h2 className="main-title">ARTICLES</h2>
                 <section>
                     <form>
                         <select onChange={handleSortChange} id="sort">
@@ -58,7 +58,7 @@ function Articles() {
                 </section>
                 <ol>
                     {articles.map((article) => {
-                        return <li key={article.article_id}>
+                        return <li className="article-container" key={article.article_id}>
                             <h3>{article.title}</h3>
                             <Link to={`/articles/${article.article_id}`}><img className="article_image" alt={`representing ${article.topic}`} src={article.article_img_url}></img></Link>
                             <p>{`Posted by ${article.author}`}</p>

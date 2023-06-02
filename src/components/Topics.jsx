@@ -18,7 +18,7 @@ if (isLoading) {
 }
 return (
     <>
-    <main>
+    <main className="topic-main">
         <ol>
         {topics.map((topic) => {
             return ( 

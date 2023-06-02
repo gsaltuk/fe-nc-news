@@ -13,8 +13,8 @@ const [users, setUsers] = useState([])
     return (
         <>
         <main>
-            <h2>USERS</h2><br></br>
-            <ol>
+            <h2 className="users-title">USERS</h2><br></br>
+            <ol className="users-container">
                 {users.map((user) => {
                     return <li key={user.username}>
                     <img className='users-avatar' src={user.avatar_url}/>
