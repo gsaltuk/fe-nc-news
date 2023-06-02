@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'lemon_milkbold';
+    src: url('./assets/fonts/lemonmilk-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     margin: auto;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'lemon_milkbold'
 }
 
 h2 {
