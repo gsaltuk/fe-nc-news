@@ -5,6 +5,7 @@ import { fetchArticle, fetchComments, increaseVote, decreaseVote, postComment, d
 function Article({ user }) {
     const [article, setArticle] = useState({})
     const [comments, setComments] = useState([])
+    const [commentsRerender, setCommentsRerender] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [newComment, setNewComment] = useState({
         "username": "",
@@ -12,7 +13,9 @@ function Article({ user }) {
     })
     const { article_id } = useParams()
     const [commentPostMessage, setCommentPostMessage] = useState('')
+    const [commentDeletedMessage, setCommentDeletedMessage] = useState('')
     const [disableForm, setDisableForm] = useState(false)
+    
     useEffect(() => {
         fetchArticle(article_id).then(({ article }) => {
             setArticle(article)
@@ -25,7 +28,7 @@ function Article({ user }) {
         fetchComments(article_id).then(({ comments }) => {
             setComments(comments)
         })
-    }, [comments])
+    },[commentsRerender])
 
 
 
@@ -95,8 +98,10 @@ function Article({ user }) {
 
 
     function handleDelete(id) {
+        setCommentDeletedMessage('Comment Deleting...')
         deleteComment(id).then(() => {
-            alert('Comment Deleted!')
+            setCommentsRerender(comments)
+            setCommentDeletedMessage('Comment Deleted!')
         }).catch((err) => {
             if (err) {
                 alert('Error deleting comment! Please try again')
@@ -134,6 +139,7 @@ function Article({ user }) {
                 </form>
                 <p>{commentPostMessage}</p>
                 <h4 className="comment-title">Comments</h4>
+                <p>{commentDeletedMessage}</p>
                 <ul>
                     {comments.map((comment) => {
                         const date = comment.created_at
@@ -154,6 +160,7 @@ function Article({ user }) {
                                         </button>
                                     )}
                                 </li>
+                                
                             </>
                         )
                     })}
