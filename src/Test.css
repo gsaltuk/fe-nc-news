@@ -84,6 +84,10 @@ textarea {
     margin-top: 10px;
 }
 
+.nav-list-item:hover {
+    color: rgb(253, 3, 153);
+}
+
 .nav-list-logo img {
     height: 11.5rem;
     max-height: 15rem;
@@ -104,12 +108,12 @@ textarea {
     text-align: center;
     margin-right: 75px;
     text-transform: uppercase;
-    
+
 }
 
 .navbar-avatar img:hover {
-   background-color: rgb(253, 3, 153);
-   transition:1s;
+    background-color: rgb(253, 3, 153);
+    transition: 1s;
 }
 
 .navbar-avatar img {
@@ -120,7 +124,7 @@ textarea {
     border: rgb(253, 3, 153);
     border-style: solid;
     padding: 20px;
-    
+
 }
 
 .navbar-avatar p {
@@ -195,8 +199,9 @@ textarea {
     background-color: rgb(253, 3, 153);
     transition: 0.5s;
 }
+
 .users-container {
-    display:grid;
+    display: grid;
     text-align: center;
     margin: auto
 }
@@ -204,9 +209,10 @@ textarea {
 .users-title {
     color: rgb(253, 3, 153)
 }
+
 .users-avatar {
     height: 200px;
-    
+
 }
 
 
@@ -215,20 +221,22 @@ textarea {
     margin: auto;
 }
 
+
 .home-title {
     font-size: 5rem;
     margin-bottom: 0;
 }
 
 
-  @keyframes rotation {
+@keyframes rotation {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  } 
+}
 
 
 @media (min-width: 768px) {
@@ -289,12 +297,15 @@ ol,
         object-fit: contain;
         margin-left: 10px;
     }
-    .nav-list-item  {
-        margin:30px;
+
+    .nav-list-item {
+        margin: 30px;
     }
+
     .single-article-image {
         height: 20rem;
     }
+
     main {
         margin-top: 625px;
     }
