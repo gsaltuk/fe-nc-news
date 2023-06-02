@@ -98,7 +98,7 @@ function Article({ user }) {
         deleteComment(id).then(() => {
             alert('Comment Deleted!')
         }).catch((err) => {
-            if(err){
+            if (err) {
                 alert('Error deleting comment! Please try again')
             }
         })
@@ -144,7 +144,15 @@ function Article({ user }) {
                                     <p className="comment-body">{comment.body}</p>
                                     <p className="comment-author">{comment.author}</p>
                                     <p className="comment-date">{newDate.toLocaleString()}</p>
-                                    <button id="delete-button"onClick={() => { handleDelete(comment.comment_id) }} value={comment.comment_id}>X</button>
+                                    {comment.author === user.username && (
+                                        <button
+                                            id="delete-button"
+                                            onClick={() => handleDelete(comment.comment_id)}
+                                            value={comment.comment_id}
+                                        >
+                                            X
+                                        </button>
+                                    )}
                                 </li>
                             </>
                         )

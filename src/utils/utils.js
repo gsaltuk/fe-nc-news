@@ -74,14 +74,9 @@ function postComment(id, comment) {
 }
 
 function deleteComment(id) {
-  return api
-    .delete(`/comments/${id}`)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((err) => {
-      return err;
-    });
+  return api.delete(`/comments/${id}`).then((res) => {
+    return res.data;
+  });
 }
 
 export {
@@ -93,5 +88,5 @@ export {
   fetchUsers,
   fetchTopics,
   postComment,
-  deleteComment
+  deleteComment,
 };
