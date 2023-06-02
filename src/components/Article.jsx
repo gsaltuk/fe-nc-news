@@ -114,9 +114,11 @@ function Article({ user }) {
     }
     return (
         <>
-            <main><h2 className='article-title'>{article.title}</h2>
+
+            <main>
+                <h2 className='article-title'>{article.title}</h2>
                 <p>{new Date(article.created_at).toUTCString()}</p>
-                <img src={article.article_img_url} alt={`represents ${article.topic}`}></img>
+                <img className="single-article-image" src={article.article_img_url} alt={`represents ${article.topic}`}></img>
                 <p className='article-author'>Posted by {article.author}</p>
                 <p className="article-votes">{article.votes} people love this goss!</p>
                 <button onClick={() => { incrementVote(article_id) }} className="vote-button">🔥</button>

@@ -5,15 +5,15 @@ import Articles from './components/Articles'
 import Article from './components/Article'
 import Users from './components/Users'
 import Topics from './components/Topics'
-import '../src/App.css'
+import '../src/Test.css'
 import { useState } from 'react'
 
 
 function App() {
   const [user, setUser] = useState({
-    "username": "tickle122",
-    "name": "Tom Tickle",
-    "avatar-url": "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953"
+    "username": "beyonce_knowles",
+    "name": "Beyonce",
+    "avatar_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT03dxpvhgCGTkmFsMzXATOQ0l88zBb_zdFdQ&usqp=CAU"
   })
 
   return (
