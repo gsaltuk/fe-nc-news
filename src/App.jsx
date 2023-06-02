@@ -12,7 +12,7 @@ import { useState } from 'react'
 function App() {
   const [user, setUser] = useState({
     "username": "beyonce_knowles",
-    "name": "Beyonce Knowles",
+    "name": "Beyonce",
     "avatar_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT03dxpvhgCGTkmFsMzXATOQ0l88zBb_zdFdQ&usqp=CAU"
   })
 
