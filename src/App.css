@@ -308,13 +308,12 @@ ol,
     }
 
     .nav-list-logo img {
-        height: 11.5rem;
-        max-height: 15rem;
+        height: 25vw;
+        max-height: 25vw;
         object-fit: contain;
         display: block;
         margin: 0 auto;
     }
-
     .nav-list-item {
         margin: 30px;
     }
