@@ -88,10 +88,27 @@ textarea {
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    position: relative;
 }
 
-.nav-list-item:hover {
-    color: rgb(253, 3, 153);
+.nav-list-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 200px); /* Adjust the height value as needed */
+    margin-top: -100px; /* Adjust the negative margin to align properly */
+    background-color: rgb(253, 3, 153);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (min-width: 1100px) {
+    .nav-list-item:hover::before {
+        opacity: 1;
+    }
 }
 
 .nav-list-logo img {
@@ -114,7 +131,6 @@ textarea {
     text-align: center;
     margin-right: 75px;
     text-transform: uppercase;
-
 }
 
 .navbar-avatar img:hover {
@@ -130,7 +146,6 @@ textarea {
     border: rgb(253, 3, 153);
     border-style: solid;
     padding: 20px;
-
 }
 
 .navbar-avatar p {
@@ -209,30 +224,26 @@ textarea {
 .users-container {
     display: grid;
     text-align: center;
-    margin: auto
+    margin: auto;
 }
 
 .users-title {
-    color: rgb(253, 3, 153)
+    color: rgb(253, 3, 153);
 }
 
 .users-avatar {
     height: 200px;
-
 }
-
 
 .home-logo {
     height: 25vw;
     margin: auto;
 }
 
-
 .home-title {
     font-size: 5rem;
     margin-bottom: 0;
 }
-
 
 @keyframes rotation {
     0% {
@@ -243,7 +254,6 @@ textarea {
         transform: rotate(360deg);
     }
 }
-
 
 @media (min-width: 1100px) {
     .nav-list {
@@ -275,16 +285,12 @@ textarea {
     text-align: right;
 }
 
-
-
 ol,
 .article-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-
 @media (max-width: 1100px) {
-
     ol,
     .article-container {
         grid-template-columns: 1fr;
@@ -307,7 +313,6 @@ ol,
         object-fit: contain;
         display: block;
         margin: 0 auto;
-        /* Add this line */
     }
 
     .nav-list-item {
@@ -324,10 +329,10 @@ ol,
         text-align: center;
         margin: auto;
     }
+
     .topic-main {
         margin-top: 120px;
     }
-
 }
 
 @keyframes fade-in {
