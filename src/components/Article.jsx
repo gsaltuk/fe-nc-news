@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticle, fetchComments, increaseVote, decreaseVote, postComment } from "../utils/utils"
+import { fetchArticle, fetchComments, increaseVote, decreaseVote, postComment, deleteComment } from "../utils/utils"
 
 function Article({ user }) {
     const [article, setArticle] = useState({})
     const [comments, setComments] = useState([])
+    const [commentsRerender, setCommentsRerender] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [newComment, setNewComment] = useState({
         "username": "",
@@ -12,8 +13,9 @@ function Article({ user }) {
     })
     const { article_id } = useParams()
     const [commentPostMessage, setCommentPostMessage] = useState('')
+    const [commentDeletedMessage, setCommentDeletedMessage] = useState('')
     const [disableForm, setDisableForm] = useState(false)
-console.log(user)
+    
     useEffect(() => {
         fetchArticle(article_id).then(({ article }) => {
             setArticle(article)
@@ -26,7 +28,7 @@ console.log(user)
         fetchComments(article_id).then(({ comments }) => {
             setComments(comments)
         })
-    }, [])
+    },[commentsRerender])
 
 
 
@@ -95,6 +97,17 @@ console.log(user)
     }
 
 
+    function handleDelete(id) {
+        setCommentDeletedMessage('Comment Deleting...')
+        deleteComment(id).then(() => {
+            setCommentsRerender(comments)
+            setCommentDeletedMessage('Comment Deleted!')
+        }).catch((err) => {
+            if (err) {
+                alert('Error deleting comment! Please try again')
+            }
+        })
+    }
 
     if (isLoading) {
         return <p>Article Loading...</p>
@@ -128,6 +141,7 @@ console.log(user)
                 </form>
                 <p>{commentPostMessage}</p>
                 <h4 className="comment-title">Comments</h4>
+                <p>{commentDeletedMessage}</p>
                 <ul>
                     {comments.map((comment) => {
                         const date = comment.created_at
@@ -138,7 +152,17 @@ console.log(user)
                                     <p className="comment-body">{comment.body}</p>
                                     <p className="comment-author">{comment.author}</p>
                                     <p className="comment-date">{newDate.toLocaleString()}</p>
+                                    {comment.author === user.username && (
+                                        <button
+                                            id="delete-button"
+                                            onClick={() => handleDelete(comment.comment_id)}
+                                            value={comment.comment_id}
+                                        >
+                                            X
+                                        </button>
+                                    )}
                                 </li>
+                                
                             </>
                         )
                     })}

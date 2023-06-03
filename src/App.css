@@ -215,6 +215,22 @@ textarea {
     }
 }
 
+
+#delete-button {
+    background-color:#FF00A1 ; 
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 12px;
+    border-style: none;
+    font-size: 1.2rem;
+}
+#delete-button:hover{
+    background-color:#000000;
+    color: white;
+    transition: 1s;
+
+}
+
 @media (max-width: 480px) {
     .nav-list {
         height: auto;
@@ -249,3 +265,4 @@ textarea {
     top: 0;
     width: 100%;
     height: 17%; */
+
