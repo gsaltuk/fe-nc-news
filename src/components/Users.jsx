@@ -3,12 +3,17 @@ import { fetchUsers } from "../utils/utils"
 
 function Users({user, setUser}) {
 const [users, setUsers] = useState([])
+const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         fetchUsers().then(({users}) => {
             setUsers(users)
+            setIsLoading(false)
         })
     },[])
 
+    if (isLoading) {
+        return <p>Users Loading...</p>
+    }
 
     return (
         <>

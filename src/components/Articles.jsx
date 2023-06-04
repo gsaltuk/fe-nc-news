@@ -38,7 +38,7 @@ function Articles() {
     }, [newParams.sort, newParams.order])
 
     if (isLoading) {
-        return <p>Loading Articles...</p>
+        return <p>Articles Loading...</p>
     }
     return (
         <>
