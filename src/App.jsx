@@ -5,6 +5,7 @@ import Articles from './components/Articles'
 import Article from './components/Article'
 import Users from './components/Users'
 import Topics from './components/Topics'
+import { Footer } from './components/Footer'
 import '../src/App.css'
 import { useState } from 'react'
 
@@ -29,8 +30,10 @@ function App() {
 
           <Route path="/users" element={<Users user={user} setUser={setUser} />}></Route>
           <Route path="/topics" element={<Topics />}></Route>
+          
 
         </Routes>
+        <Footer />
       </>
     </BrowserRouter>
   )

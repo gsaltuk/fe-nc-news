@@ -43,6 +43,16 @@ textarea {
     font-size: 30px;
 }
 
+footer {
+    background-color: black;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
 .main-title {
     color: rgb(253, 3, 153);
 }
