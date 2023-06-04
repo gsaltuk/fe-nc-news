@@ -117,27 +117,27 @@ function Article({ user }) {
 
             <main className="single-article-main">
                 <h2 className='article-title'>{article.title}</h2>
-                <p>{new Date(article.created_at).toUTCString()}</p>
                 <img className="single-article-image" src={article.article_img_url} alt={`represents ${article.topic}`}></img>
                 <p className='article-author'>Posted by {article.author}</p>
-                <p className="article-votes">{article.votes} people love this goss!</p>
-                <button onClick={() => { incrementVote(article_id) }} className="vote-button">🔥</button>
+                <p>{new Date(article.created_at).toUTCString()}</p>
+                <p className="article-votes">{article.votes} people 💖 this goss!</p>
+                <button onClick={() => { incrementVote(article_id) }} className="vote-button">💖</button>
                 <button onClick={() => { reduceVote(article_id) }} className="vote-button">❄️</button>
                 <p className='article-body'>{article.body}</p></main>
             <section>
                 <form onSubmit={handleSubmit}>
-                    <h3>Add a comment!</h3>
+                    <h3>ADD A COMMENT</h3>
                     <textarea
                         name="newcomment"
                         cols="30"
                         rows="5"
-                        placeholder="Add comment here"
+                        placeholder="Comment here..."
                         id="title"
                         type="text"
                         value={newComment.body}
                         onChange={handleChange}
                     ></textarea><br></br>
-                    <button name="submitbutton">Submit</button>
+                    <button className="submit-button"name="submitbutton">Submit</button>
                 </form>
                 <p>{commentPostMessage}</p>
                 <h4 className="comment-title">Comments</h4>
