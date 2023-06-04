@@ -115,7 +115,7 @@ function Article({ user }) {
     return (
         <>
 
-            <main>
+            <main className="single-article-main">
                 <h2 className='article-title'>{article.title}</h2>
                 <p>{new Date(article.created_at).toUTCString()}</p>
                 <img className="single-article-image" src={article.article_img_url} alt={`represents ${article.topic}`}></img>
