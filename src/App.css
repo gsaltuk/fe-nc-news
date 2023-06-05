@@ -49,13 +49,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:auto;
-    width:100%;
-    bottom:0;
-    left:0;
+    margin-top: auto;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     margin-bottom: 0;
     position: fixed;
-  }
+}
 
 
 .main-title {
@@ -83,7 +83,7 @@ footer {
     color: white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     height: auto;
@@ -107,6 +107,7 @@ footer {
     margin-left: 20px;
     margin-right: 20px;
     position: relative;
+
 }
 
 .nav-list-item::before {
@@ -152,6 +153,7 @@ footer {
     text-align: center;
     margin-right: 75px;
     text-transform: uppercase;
+    margin: 0 auto;
 }
 
 .navbar-avatar img:hover {
@@ -171,7 +173,7 @@ footer {
 
 .navbar-avatar p {
     margin-top: 5px;
-    margin-left:50px
+    margin-left: 50px;
 }
 
 .single-article-main {
@@ -201,7 +203,7 @@ footer {
     text-transform: uppercase;
     font-size: 1em;
     font-weight: bolder;
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 .article-title {
@@ -223,7 +225,8 @@ footer {
     font-size: 3em;
     text-transform: uppercase;
     margin-bottom: 0;
-    color: rgb(253, 3, 153);;
+    color: rgb(253, 3, 153);
+    ;
 
 }
 
@@ -350,18 +353,34 @@ ol,
     ol,
     .article-container {
         grid-template-columns: 1fr;
-        margin-right:35px;
+        margin-right: 35px;
     }
 
     .nav-list {
         position: relative;
+
     }
 
     .navbar-avatar {
         text-align: center;
-        margin: auto;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        margin: 30px auto 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-avatar img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 2px solid rgb(253, 3, 153);
+        padding: 20px;
+    }
+
+    .navbar-avatar p {
+        margin-top: 5px;
+        margin-left: 0;
     }
 
     .nav-list-logo img {
@@ -374,6 +393,7 @@ ol,
 
     .nav-list-item {
         margin: 30px;
+        margin-left: 0;
     }
 
     .single-article-image {
@@ -387,19 +407,20 @@ ol,
         margin: auto;
         margin-bottom: 50px;
 
-    .topic-main {
-        margin-top: 120px;
+        .topic-main {
+            margin-top: 120px;
+        }
+    }
+
+
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
 }
-
-
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}}
