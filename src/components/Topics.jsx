@@ -24,7 +24,7 @@ return (
             return ( 
             <>
             <li>
-            <Link to={`/articles/topics/${topic.slug}`}><img src={`/${topic.slug}.jpg`} alt={topic.slug}></img></Link>
+            <Link to={`/articles/topics/${topic.slug}`}><img className="topic-image" src={`/${topic.slug}.jpg`} alt={topic.slug}></img></Link>
             </li>
             </>)
         })}
