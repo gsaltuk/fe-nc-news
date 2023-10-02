@@ -11,11 +11,15 @@ h2 {
     font-size: 3rem;
 }
 
+.paragraph {
+    font-size: 5rem;
+}
+
 ol {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 100px;
 }
 
 ul {
@@ -66,6 +70,7 @@ footer {
     margin-top: 250px;
     opacity: 0;
     animation: fade-in 1s ease-in forwards;
+    align-items: center;
 }
 
 .topic-image {
